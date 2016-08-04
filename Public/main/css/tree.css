@@ -1,0 +1,24 @@
+﻿* {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+	font-family:微软雅黑;
+	overflow:hidden;
+}
+#menuControll{
+	width:100%;
+	position:relative;
+	word-wrap:break-word;
+	border-bottom:1px solid #065FB9;
+	margin:0;
+	padding:0 10px;
+	font-size:14px;
+	height:40px;
+	line-height:40px;
+	vertical-align:middle;
+    background-image: -moz-linear-gradient(top,#EBEBEB, #BFBFBF);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #EBEBEB),color-stop(1, 
+#BFBFBF));
+}
