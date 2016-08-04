@@ -15,3 +15,5 @@ ONSV1.0(Octopus News System)章鱼新闻采集系统
 &nbsp;&nbsp;&nbsp;&nbsp;3）列表时间规则年（Y/y）、月（m）、日d）、时（H）、分（i）、秒（s）来替换原字符。<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;4）匹配顺序是由查看列表匹配规则后面的html源代码的排列中看出来的。<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;5）内容匹配规则直接在文章内容链接源代码中提取匹配规则即可。如果有缺失字符，可以加上内容右补填充字符<br/>
+#如何修改插入数据库中的新闻类别
+修改Cofig/categoryList.php的返回数组即可。
