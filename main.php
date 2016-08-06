@@ -1,10 +1,7 @@
 <?php
-/*print_r($_SERVER);//系统环境变量
-print_r(get_loaded_extensions());//获取php.ini支持的函数模块
-print_r(ini_get_all());//获取php.ini的全部配置文件
-*/
-$ini=ini_get_all();
-$fun=get_loaded_extensions();
+/*主检测页面*/
+$ini=ini_get_all();//获取php.ini的全部配置数组
+$fun=get_loaded_extensions();//获取php.ini支持的函数模块数组
 $fileUrl="Public/template/";
 ?>
 <!DOCTYPE html>

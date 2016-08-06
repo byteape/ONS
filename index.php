@@ -28,8 +28,8 @@ if(!file_exists($lockfile)){
 		</div>
 	</div>
 	<div id="navigator" style="width:15%; ">
-		<iframe src="tree.php"></iframe>
-        </div>
+		<iframe name="TreeFrame" id="TreeFrame" src="tree.php"></iframe>
+    </div>
 	<div id="main" style="float:right;width:82% !important;margin-right:10px; ">
 		<iframe name="MainFrame" src="main.php"></iframe>
 	</div>
@@ -47,17 +47,13 @@ window.onresize=function(){screenAdapter()};
 window.onload=function(){screenAdapter()};
 </script>
 <script>
- //遮盖层显示与隐藏
-function coverShow(type){
-	if(type){
-		$('#create_cache').css('display','block');
-	}else{
-		$('#create_cache').css('display','none');
-	}
-}
+    /*对子iframe的tree的遮盖控制*/
+    function coverShow(type){
+        if(type){
+            $('#TreeFrame').contents().find("#create_cache").show();
+        }else{
+            $('#TreeFrame').contents().find("#create_cache").hide();
+        }
+    }
 </script>
-<div style="position: fixed;width: 100%;height: 100%;legt: 0;top: 0;display: none;" id="create_cache">
-    <i class="mask" style="display: block;position: fixed;width: 100%;height: 100%;left: 0;top: 0;background: rgba(0,0,0,.3);"></i>
-    <div style="width: 100%;position: fixed;top: 50%;left: 0;text-align: center;"><img src="Public/layer/skin/default/loading-0.gif" alt=""  /></div>
-</div>
 </html>

@@ -1,4 +1,5 @@
-﻿<?php 
+﻿<?php
+/*采集管理删除页*/
 require 'Library/common.php';
 error_reporting(E_ALL ^E_NOTICE);
 $id=$_GET['id'];

@@ -1,8 +1,10 @@
 <?php
+/*采集规则测试页*/
 header("Content-Type:text/html;charset=utf-8");
 date_default_timezone_set('Asia/Shanghai');
-//采集规则测试页
+/*接收参数开始*/
 $id=$_GET['id'];
+/*引入与定义变量开始*/
 require 'Library/common.php';
 require 'Library/CaijiClass.class.php';
 require 'Config/function.php';
@@ -14,13 +16,13 @@ $charset=$rule['charset'];
 $r_list=$rule['r_list'];
 
 $p1=new CaijiClass($geturl,$charset);
-$content=$p1->getAllContent();//获取全部html内容
-//print_r($content);
+$content=$p1->getAllContent();//获取全部经过压缩的html内容
+
 $post_pattern[0]=$r_list;
 $result=$p1->pregMatch($post_pattern);
 $listResult=$result[0];unset($listResult[0]);
 echo "<pre>";
-print_r($listResult);
+print_r($listResult);//打印列表匹配结果数组
 echo "-------------------------------------------------------------------------<br/>";
 
 if($rule['title_first']){
@@ -67,7 +69,6 @@ $date_h=$h_k!==false?$match_re[$h_k]:date('h',time());
 $date_i=$i_k!==false?$match_re[$i_k]:date('i',time());
 $date_s=$s_k!==false?$match_re[$s_k]:date('s',time());
 
-//echo(strtotime('16-11-01 13:24'));
 //print_r($date_y.'-'.$date_m.'-'.$date_d.' '.$date_h.':'.$date_i.':'.$date_s);
 $count=count($urlArray);
 echo "总共记录：".$count."<br/>";
@@ -84,5 +85,4 @@ for($i=0;$i<1;$i++){
 }
 $patters_post[0]=$rule['r_detail'];//内容
 $post_result=preg_match_content($patters_post,$filename);
-//print_r($post_result);
 echo "第一条新闻内容为：<br/>".htmlspecialchars_decode($post_result[0][1][0]);

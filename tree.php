@@ -1,7 +1,8 @@
 <?php
-    header("Content-Type:text/html;charset=utf-8");
-    require 'Library/common.php';//引入数据库实例
-    $resultList=$M->table('rules')->select();
+/*树型列表页*/
+header("Content-Type:text/html;charset=utf-8");
+require 'Library/common.php';
+$resultList=$M->table('rules')->select();
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,6 +73,11 @@ if (selNum != -1) {
 	top.document.frames["MainFrame"].location.href=link;
 }
 </script>
+</div>
+<!--遮盖层，由父iframe控制-->
+<div style="position: fixed;width: 100%;height: 100%;legt: 0;top: 0;display: none;z-index: 10;" id="create_cache">
+    <i class="mask" style="display: block;position: fixed;width: 100%;height: 100%;left: 0;top: 0;background: rgba(0,0,0,.3);"></i>
+    <div style="width: 100%;position: fixed;top: 50%;left: 0;text-align: center;"><!--<img src="Public/layer/skin/default/loading-0.gif" alt=""  />--></div>
 </div>
 </body>
 </html>
